@@ -1,0 +1,35 @@
+ I  $ ezored  conan setup
+[INFO] Creating default profile...
+Found gcc 11
+Found clang 15.0
+gcc>=5, using the major as version
+
+************************* WARNING: GCC OLD ABI COMPATIBILITY ***********************
+
+Conan detected a GCC version > 5 but has adjusted the 'compiler.libcxx' setting to
+'libstdc++' for backwards compatibility.
+Your compiler is likely using the new CXX11 ABI by default (libstdc++11).
+
+If you want Conan to use the new ABI for the default profile, run:
+
+    $ conan profile update settings.compiler.libcxx=libstdc++11 default
+
+Or edit '/home/ivan/.conan/profiles/default' and set compiler.libcxx=libstdc++11
+
+************************************************************************************
+
+
+
+Profile created with detected settings: /home/ivan/.conan/profiles/default
+[INFO] Copying files...
+[INFO] Copying profile "ezored_android_profile"...
+[INFO] Copying profile "ezored_tvos_profile"...
+[INFO] Copying profile "ezored_ios_profile"...
+[INFO] Copying profile "ezored_catalyst_profile"...
+[INFO] Copying profile "ezored_watchos_profile"...
+[INFO] Copying profile "ezored_linux_profile"...
+[INFO] Copying profile "ezored_macos_profile"...
+[INFO] Copying profile "ezored_windows_profile"...
+[OK]
+[OK]
+
