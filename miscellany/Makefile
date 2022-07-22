@@ -1,6 +1,8 @@
+RECIPE=miscellany-tools
+REPO=miscellany
 install:
-	brew $@ miscellany
+	brew $@ $(RECIPE)
 uninstall:
-	brew $@ miscellany
+	brew $@ $(RECIPE)
 clone:
-	hub clone miscellany
+	hub clone $(REPO)
