@@ -1,0 +1,27 @@
+Debian ou Ubuntu
+
+
+
+Compilador
+
+Digite no terminal: sudo apt install build-essential
+
+python (recomendo o python3, pois o python2 que já vem será descontinuado em 2020)
+
+Digite no terminal: sudo apt install python3
+
+pip
+
+Instale o gerenciador de pacotes do python digitando no terminal: sudo apt install python-pip
+
+Atualize o gerenciador de pacotes do python digitando no terminal: pip install --upgrade pip
+
+cmake
+
+Digite no terminal: sudo apt install cmake
+
+conan
+
+Digite no terminal: pip install conan --upgrade
+
+Digite no terminal: conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
