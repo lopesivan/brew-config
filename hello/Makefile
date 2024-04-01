@@ -36,6 +36,9 @@ step5:
 	echo `tput bold tput setb 4`brew update`tput sgr0`
 	echo `tput bold tput setb 4`brew upgrade`tput sgr0`
 
+update:
+	bash ./etc/update-brew.sh
+
 clean:
 	(source ./data.repo; rm -rf $${REPO_NAME})
 	rm -rf a b  *.diff
