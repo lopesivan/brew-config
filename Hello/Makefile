@@ -6,8 +6,18 @@ install:
 	brew $@ $(RECIPE)
 uninstall:
 	brew $@ $(RECIPE)
-clone:
+
+build-local:
 	wget $(REPO)
 	tar xvzf $(PKGNAME)-$(VERSION).tar.gz
+	( cd $(PKGNAME)-$(VERSION); \
+		./configure --disable-dependency-tracking --disable-silent-rules; \
+		make; \
+	)
+
+clean:
+	rm -rf $(PKGNAME)-$(VERSION).tar.gz
+	rm -rf $(PKGNAME)-$(VERSION)
+
 recipes:
 	hub clone my_recipes
