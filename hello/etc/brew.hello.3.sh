@@ -1,43 +1,12 @@
 #!/bin/bash
 
 source ./data.repo
+
 ##############################################################################
 MY_RECIPE=${REPO_NAME}@42.rb
 LOCAL_REPO=${REPO_NAME}
 
-# Step 1 - Clone repo
-git clone ${REMOTE_REPO} a
-git clone ${LOCAL_REPO} b
-
-# Step 2 - Aplique modificação
-cd a
-#git checkout ${BRANCH}
-git checkout ${REVISION}
-git switch -c ${REVISION}
-cp -r ../b/* .
-
-# Step 3 - Cria diff
-git checkout -b doing
-git add .
-git ci -m "custom"
-git format-patch --stdout HEAD^ >../${REPO_NAME}-$(git log -n1 --format=format:"%s" | tr '[[:upper:] ]' '[[:lower:]_]')-$(date +%Y%m%d)-$(git log -n1 --format=format:"%h").diff
-git checkout ${BRANCH}
-exit 0
-git branch -D doing
-
-# Step 4 - Upload diff
-cd $ROOT
-
-hub clone my_patches
-test -d my_patches/${REPO_NAME} || mkdir my_patches/${REPO_NAME}
-cp *.diff my_patches/${REPO_NAME}
-cd my_patches
-git add .
-git ci -m "update ${REPO_NAME}"
-git push
-
-# Step 5 - Create recipes
-cd $ROOT
+echo '# Step 5 - Create recipes'
 
 exec 4>&1 # stdout duplicado ( FD 4 tem as mesmas caracteristicas
 # do STDOUT), aponta para o terminal.
@@ -70,10 +39,7 @@ done
 echo '  end'
 
 cat <<EOF
-  def install
-    prefix.install Dir["*"]
-  end
-
+  $(cat ./install.rb | sed '2,$s/^/  /')
   test do
     system "false"
   end
@@ -84,14 +50,5 @@ exec 1>&4 # FD 1 recebe as caracteristicas de FD 4.
 # FD 1 ressetado.
 
 exec 4>&- # FD 4 eh liberado.
-
-# Step 6 - Upload recipes
-cd $ROOT
-hub clone my_recipes
-cp ${MY_RECIPE} my_recipes/
-cd my_recipes
-git add .
-git ci -m "[${VERSION}] update ${MY_RECIPE}"
-git push
 
 exit 0
