@@ -61,6 +61,7 @@ clean:
 	(source ./data.repo; rm -rf $${REPO_NAME})
 	rm -rf a b  *.diff
 	rm -rf my_patches my_recipes
+	rm $(RECIPE).rb
 
 recipes:
 	hub clone my_recipes
