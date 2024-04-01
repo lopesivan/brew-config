@@ -53,7 +53,7 @@ upload_original:
 	@echo `tput bold tput setb 4`brew update`tput sgr0`
 	@echo `tput bold tput setb 4`brew upgrade`tput sgr0`
 
-original: recipes upload_original update install
+original: version recipes upload_original update install
 
 update:
 	bash ./etc/update-brew.sh

@@ -6,8 +6,8 @@ class HelloAT42 < Formula
   desc 'O programa hello é uma utilitário simples projetado para imprimir Hello, world! no console.'
   homepage 'https://github.com/lopesivan/hello'
   url 'https://github.com/lopesivan/hello.git',
-      revision: 'a95871b4a525196ff513ae31ae04f65240ad844e'
-  version '1.0.1'
+      revision: '51cdd2e73d9a7da3c87ffc7d3562bfa512b81826'
+  version '1.0.3'
   #  head "https://github.com/lopesivan/hello",
   #    branch: "main",
   #    using: :git
