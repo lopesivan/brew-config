@@ -1,0 +1,10 @@
+ROOT=$PWD
+REPO_NAME=nativium
+VERSION=1.0.2
+DESCRIPTION="C++ Multiplatform Modular Toolkit Template."
+##############################################################################
+REVISION=0316d93ad2c21c8c66bdb4b45bc82ba9adcb9e1d
+BRANCH=main
+REMOTE_REPO=https://github.com/nativium/nativium
+
+# vim: ft=sh
