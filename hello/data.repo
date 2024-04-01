@@ -1,0 +1,10 @@
+ROOT=$PWD
+REPO_NAME=hello
+VERSION=1.0.0
+DESCRIPTION="O programa hello é uma utilitário simples projetado para imprimir \"Hello, world!\" no console."
+##############################################################################
+REVISION=a95871b4a525196ff513ae31ae04f65240ad844e
+BRANCH=main
+REMOTE_REPO=https://github.com/lopesivan/hello
+
+# vim: ft=sh
