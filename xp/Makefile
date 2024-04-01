@@ -15,7 +15,7 @@ set:
 	@( test -e $(OFFFLAG) && echo existe: não faça update || echo não exite: pode fazer update )
 
 config: $(REPO)
-	@(cd $(REPO); bash ../etc/brew.config.sh $(REPO) $(VERSION) )
+	@(cd $(REPO); bash ../etc/brew.config.sh $(REPO) $(VERSION) ) > data.repo
 
 install:
 	brew $@ $(RECIPE)

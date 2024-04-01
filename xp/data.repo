@@ -1,9 +1,9 @@
-ROOT=$PWD
+ROOT=/workspace/brew-config/xp/xp
 REPO_NAME=xp
-VERSION=1.0.2
-DESCRIPTION="Miscellany tools."
+VERSION=1.0.3
+DESCRIPTION="Unnamed repository; edit this file 'description' to name the repository."
 ##############################################################################
-REVISION=d4b520a4455afbd57407b910fdb09148cc6871fb
+REVISION=f55be8194c746e6c2799b0c24287584be2c945b9
 BRANCH=main
 REMOTE_REPO=https://github.com/lopesivan/xp
 # vim: ft=sh
