@@ -29,7 +29,7 @@ diff: $(REPO)
 	echo `tput bold tput setb 3`Cria o arquivo diff `tput sgr0`
 	bash ./etc/brew.hello.1.sh
 
-upload_diff:
+upload_diff: patches
 	echo `tput bold tput setb 3`Upload o arquivo diff `tput sgr0`
 	bash ./etc/brew.hello.2.sh
 
@@ -63,3 +63,6 @@ clean:
 
 recipes:
 	hub clone my_recipes
+
+patches:
+	hub clone my_patches
