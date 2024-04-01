@@ -29,7 +29,7 @@ step4:
 
 step5:
 	echo `tput bold tput setb 3`Upload original recipes `tput sgr0`
-	bash ./etc/brew.hello.4.sh
+	bash ./etc/brew.hello.5.sh
 
 clean:
 	(source ./data.repo; rm -rf $${REPO_NAME})
