@@ -37,7 +37,7 @@ new_recipes:
 	echo `tput bold tput setb 3`Cria novo recipes `tput sgr0`
 	bash ./etc/brew.hello.3.sh
 
-upload_recipes:
+upload_recipes: recipes
 	echo `tput bold tput setb 3`Upload recipes `tput sgr0`
 	bash ./etc/brew.hello.4.sh
 	echo `tput bold tput setb 4`brew update`tput sgr0`
@@ -50,9 +50,7 @@ upload_original:
 	echo `tput bold tput setb 4`brew update`tput sgr0`
 	echo `tput bold tput setb 4`brew upgrade`tput sgr0`
 
-original:
-	@(make uploat_original; make update || { make set; make update; }  )
-	@make install
+original: recipes upload_original update install
 
 update:
 	bash ./etc/update-brew.sh
