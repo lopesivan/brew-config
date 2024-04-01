@@ -26,10 +26,15 @@ step3:
 step4:
 	echo `tput bold tput setb 3`Upload recipes `tput sgr0`
 	bash ./etc/brew.hello.4.sh
+	echo `tput bold tput setb 4`brew update`tput sgr0`
+	echo `tput bold tput setb 4`brew upgrade`tput sgr0`
 
 step5:
 	echo `tput bold tput setb 3`Upload original recipes `tput sgr0`
 	bash ./etc/brew.hello.5.sh
+	echo `tput bold tput setb 3`Não esqueça:`tput sgr0`
+	echo `tput bold tput setb 4`brew update`tput sgr0`
+	echo `tput bold tput setb 4`brew upgrade`tput sgr0`
 
 clean:
 	(source ./data.repo; rm -rf $${REPO_NAME})
