@@ -6,3 +6,5 @@ uninstall:
 	brew $@ $(RECIPE)
 clone:
 	hub clone $(REPO)
+recipes:
+	hub clone my_recipes

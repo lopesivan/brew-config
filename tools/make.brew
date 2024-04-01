@@ -1,0 +1,83 @@
+LINUXBREW = /home/linuxbrew/.linuxbrew
+SHIMS  = $(LINUXBREW)/Homebrew/Library/Homebrew/shims/linux/super
+SHIMS_ = $(LINUXBREW)/Homebrew/Library/Homebrew/shims/super
+CELLAR = ${HOME}/.linuxbrew/Cellar
+
+all: toggle autoconf pkg-config
+
+toggle:
+	(   cd $(SHIMS); \
+		if test -f .OFF; \
+		then \
+			echo ON;\
+			rm .OFF; \
+			rename 's/.OFF//' *.OFF; \
+			ls -la ; \
+			pwd ; \
+		else \
+			echo OFF;\
+			rename 's/$$/.OFF/' *; \
+			> .OFF; \
+			ls -la ; \
+			pwd ; \
+		fi;\
+	)
+	(   cd $(SHIMS_); \
+		if test -f .OFF; \
+		then \
+			echo ON;\
+			rm .OFF; \
+			rename 's/.OFF//' *.OFF; \
+			ls -la ; \
+			pwd ; \
+		else \
+			echo OFF;\
+			rename 's/$$/.OFF/' *; \
+			> .OFF; \
+			ls -la ; \
+			pwd ; \
+		fi;\
+	)
+
+autoconf:
+	(   cd $(SHIMS); \
+		if test -f .OFF; \
+		then \
+			echo OFF;\
+			( cd ${HOME}/.linuxbrew/bin; \
+			test -e autoconf && rm autoconf; \
+			test -e autoheader && rm autoheader; \
+			test -e autom4te && rm autom4te;  \
+			test -e autoreconf && rm autoreconf;  \
+			test -e autoscan && rm autoscan;  \
+			test -e autoupdate && rm autoupdate; \
+			test -e ifnames && rm ifnames; ) \
+		else \
+			echo ON;\
+			( cd ${HOME}/.linuxbrew/bin; \
+			test -e autoconf   || ln -s ../Cellar/autoconf/2.71/bin/autoconf; \
+			test -e autoheader || ln -s ../Cellar/autoconf/2.71/bin/autoheader; \
+			test -e autom4te   || ln -s ../Cellar/autoconf/2.71/bin/autom4te; \
+			test -e autoreconf || ln -s ../Cellar/autoconf/2.71/bin/autoreconf; \
+			test -e autoscan   || ln -s ../Cellar/autoconf/2.71/bin/autoscan; \
+			test -e autoupdate || ln -s ../Cellar/autoconf/2.71/bin/autoupdate; \
+			test -e ifnames    || ln -s ../Cellar/autoconf/2.71/bin/ifnames; ) \
+			\
+		fi;\
+	)
+
+pkg-config:
+	(   cd $(SHIMS); \
+		if test -f .OFF; \
+		then \
+			echo OFF;\
+			( cd ${HOME}/.linuxbrew/bin; \
+			test -e pkg-config && rm pkg-config; ) \
+		else \
+			echo ON;\
+			( cd ${HOME}/.linuxbrew/bin; \
+			test -e pkg-config   || ln -s ../Cellar/pkg-config/0.29.2_3/bin/pkg-config; )\
+			\
+		fi;\
+	)
+
