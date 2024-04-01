@@ -7,7 +7,7 @@ class XpAT42 < Formula
   url 'https://github.com/lopesivan/xp.git',
       branch: 'main',
       using: :git
-  version '2.1'
+  version '1.0.3'
   head 'https://github.com/lopesivan/xp.git',
        branch: 'master',
        using: :git

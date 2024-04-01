@@ -17,6 +17,9 @@ set:
 config: $(REPO)
 	@(cd $(REPO); bash ../etc/brew.config.sh $(REPO) $(VERSION) ) > data.repo
 
+version: recipe/$(RECIPE).rb
+	sed "s/version '.*'$$/version '$(VERSION)'/" -i recipe/$(RECIPE).rb
+
 install:
 	brew $@ $(RECIPE)
 uninstall:
