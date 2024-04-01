@@ -1,0 +1,9 @@
+ROOT=$PWD
+REPO_NAME=xp
+VERSION=1.0.2
+DESCRIPTION="Miscellany tools."
+##############################################################################
+REVISION=d4b520a4455afbd57407b910fdb09148cc6871fb
+BRANCH=main
+REMOTE_REPO=https://github.com/lopesivan/xp
+# vim: ft=sh
