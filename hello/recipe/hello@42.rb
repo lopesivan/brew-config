@@ -19,12 +19,15 @@ class HelloAT42 < Formula
     ]
 
     system 'sh', 'autogen.sh'
+    system './configure', *args
+    system 'make', 'CC=/usr/bin/gcc', 'CXX=/usr/bin/g++'
+    system 'make', 'install'
 
-    mkdir 'build' do
-      system '../configure', *args
-      system 'make', 'CC=/usr/bin/gcc', 'CXX=/usr/bin/g++'
-      system 'make', 'install'
-    end
+    # mkdir 'build' do
+    #   system './configure', *args
+    #    system 'make', 'CC=/usr/bin/gcc', 'CXX=/usr/bin/g++'
+    #   system 'make', 'install'
+    # end
   end
 
   test do

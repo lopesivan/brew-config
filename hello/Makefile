@@ -2,6 +2,11 @@ SHELL=/bin/bash
 REPO=hello
 RECIPE=hello@42
 
+all: update
+
+set:
+	make -C /home/linuxbrew/.linuxbrew
+
 install:
 	brew $@ $(RECIPE)
 uninstall:
@@ -11,6 +16,8 @@ clone:
 	echo `tput bold tput setb 3`Clonando repositório `tput sgr0`
 	(source ./data.repo; git clone $${REMOTE_REPO})
 	echo `tput bold tput setb 3`Agora realize as mudancas `tput sgr0`
+
+deploy: diff upload_diff new_recipes upload_recipes update
 
 diff: $(REPO)
 	echo `tput bold tput setb 3`Cria o arquivo diff `tput sgr0`
