@@ -2,10 +2,16 @@ SHELL=/bin/bash
 REPO=hello
 RECIPE=hello@42
 
+HOMEBREWHOME = /home/linuxbrew/.linuxbrew
+LIBRARY      = $(HOMEBREWHOME)/Homebrew/Library
+SUPER        = $(LIBRARY)/Homebrew/shims/linux/super
+OFFFLAG      = $(SUPER)/.OFF
+
 all: update
 
 set:
-	make -C /home/linuxbrew/.linuxbrew
+	@make -C /home/linuxbrew/.linuxbrew
+	@( test -e $(OFFFLAG) && echo exite: não faça update || echo não exite: pode fazer update )
 
 install:
 	brew $@ $(RECIPE)
@@ -43,6 +49,10 @@ upload_original:
 	echo `tput bold tput setb 3`Não esqueça:`tput sgr0`
 	echo `tput bold tput setb 4`brew update`tput sgr0`
 	echo `tput bold tput setb 4`brew upgrade`tput sgr0`
+
+original:
+	@(make uploat_original; make update || { make set; make update; }  )
+	@make install
 
 update:
 	bash ./etc/update-brew.sh
