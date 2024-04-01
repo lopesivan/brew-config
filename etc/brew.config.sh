@@ -6,7 +6,7 @@ cat <<EOF
 ROOT=$PWD
 REPO_NAME=$1
 VERSION=$2
-DESCRIPTION="$(cat ./.git/description)"
+DESCRIPTION="$(cat ./.description)"
 ##############################################################################
 REVISION=$(git log -n1 --format=format:"%H")
 BRANCH=main
