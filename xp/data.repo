@@ -1,9 +1,9 @@
 ROOT=/workspace/brew-config/xp/xp
 REPO_NAME=xp
 VERSION=1.0.3
-DESCRIPTION="Unnamed repository; edit this file 'description' to name the repository."
+DESCRIPTION="Commnad line using framework bangsh."
 ##############################################################################
-REVISION=f55be8194c746e6c2799b0c24287584be2c945b9
+REVISION=489f36d62359256987072369f9790a95bfe4050c
 BRANCH=main
-REMOTE_REPO=https://github.com/lopesivan/xp
+REMOTE_REPO=git@github.com:lopesivan/xp.git
 # vim: ft=sh
