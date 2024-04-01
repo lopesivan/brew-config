@@ -1,8 +1,8 @@
 SHELL=/bin/bash
 REPO=xp
 RECIPE=xp@42
-
-
+VERSION=1.0.3
+## ###########################################################################
 HOMEBREWHOME = /home/linuxbrew/.linuxbrew
 LIBRARY      = $(HOMEBREWHOME)/Homebrew/Library
 SUPER        = $(LIBRARY)/Homebrew/shims/linux/super
@@ -13,6 +13,9 @@ all: update
 set:
 	@make -C /home/linuxbrew/.linuxbrew
 	@( test -e $(OFFFLAG) && echo existe: não faça update || echo não exite: pode fazer update )
+
+config: $(REPO)
+	@(cd $(REPO); bash ../etc/brew.config.sh $(REPO) $(VERSION) )
 
 install:
 	brew $@ $(RECIPE)
