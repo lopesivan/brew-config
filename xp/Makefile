@@ -12,7 +12,7 @@ all: update
 
 set:
 	@make -C /home/linuxbrew/.linuxbrew
-	@( test -e $(OFFFLAG) && echo exite: não faça update || echo não exite: pode fazer update )
+	@( test -e $(OFFFLAG) && echo existe: não faça update || echo não exite: pode fazer update )
 
 install:
 	brew $@ $(RECIPE)
