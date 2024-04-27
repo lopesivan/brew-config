@@ -3,7 +3,7 @@ REPO_NAME=spill
 VERSION=1.0.1
 DESCRIPTION="spill is a program for creating set of symbolic links from one directory hierarchy which point to corresponding filenames in a separate directory hierarchy."
 ##############################################################################
-REVISION=51cdd2e73d9a7da3c87ffc7d3562bfa512b81826
-BRANCH=main
-REMOTE_REPO=https://github.com/ivancarlos/spill
+REVISION=b2f868fa6cb645a98d19d5e62cb364fc5a53a231
+BRANCH=master
+REMOTE_REPO=git@github.com:ivancarlos/spill.git
 # vim: ft=sh

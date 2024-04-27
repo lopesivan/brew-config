@@ -3,8 +3,7 @@ def install
     --prefix=#{prefix}
   ]
 
-  system 'sh', 'autogen.sh'
   system './configure', *args
-  system 'make', 'CC=/usr/bin/gcc', 'CXX=/usr/bin/g++'
+  system 'make'
   system 'make', 'install'
 end

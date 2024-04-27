@@ -9,7 +9,7 @@ VERSION=$2
 DESCRIPTION="$(cat ./.description)"
 ##############################################################################
 REVISION=$(git log -n1 --format=format:"%H")
-BRANCH=main
+BRANCH=$(git branch | awk '{print $2}')
 REMOTE_REPO=$(git remote -v | awk '{print $2; exit}')
 # vim: ft=sh
 EOF
