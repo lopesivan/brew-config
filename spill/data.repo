@@ -1,0 +1,9 @@
+ROOT=/workspace/brew-config/spill/spill
+REPO_NAME=spill
+VERSION=1.0.1
+DESCRIPTION="spill is a program for creating set of symbolic links from one directory hierarchy which point to corresponding filenames in a separate directory hierarchy."
+##############################################################################
+REVISION=51cdd2e73d9a7da3c87ffc7d3562bfa512b81826
+BRANCH=main
+REMOTE_REPO=https://github.com/ivancarlos/spill
+# vim: ft=sh
