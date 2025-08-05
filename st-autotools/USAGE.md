@@ -15,6 +15,7 @@ include ../dev.mk
 
 
 ## Ciclo 2
+se existe data.repo
 Alterações se já tem o projeto:
 1 **make clone**
 2 Realizo as modificações em `REPO` e commito
