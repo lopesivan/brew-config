@@ -96,8 +96,12 @@ clean:
 	rm $(RECIPE).rb
 
 recipes:
+	@if [ -d my_recipes ]; then \
+		echo "Removendo pasta my_recipes existente..."; \
+		rm -rf my_recipes; \
+	fi
 	hub clone $(MY_RECIPES)
-	mv $(MY_RECIPES) my_recipes
+	mv $(notdir $(MY_RECIPES)) my_recipes
 
 patches:
 	hub clone $(MY_PATCHES)
