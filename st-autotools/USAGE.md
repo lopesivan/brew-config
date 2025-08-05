@@ -9,10 +9,16 @@ include ../dev.mk
 
 ## Ciclo 1
 
-1 **make hub**
-2 **make config**
-3 Realizo as modificações em `REPO` e commito
-4 **make deploy**
+1 **make init**
+2 Realizo as modificações em `REPO` e commito
+3 **make deploy**
+
+
+## Ciclo 2
+Alterações se já tem o projeto:
+1 **make clone**
+2 Realizo as modificações em `REPO` e commito
+3 **make deploy**
 
 
 ## Ciclo 2
